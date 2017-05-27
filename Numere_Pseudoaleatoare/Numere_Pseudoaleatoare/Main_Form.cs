@@ -78,5 +78,15 @@ namespace Numere_Pseudoaleatoare
             }
             btn_ClearFile.Enabled = state;
         }
+
+        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Student: George-Dan PRODAN \r\n" +"Profesor Coordonator: Lect. Univ. Dr. Dan-Laurentiu GRECU \r\n\r\n"+ "Universitatea \"Titu Maiorescu\" Bucuresti \r\n"+"Sesiunea Iunie/Iulie 2017", "About", MessageBoxButtons.OK);
+        }
     }
 }
