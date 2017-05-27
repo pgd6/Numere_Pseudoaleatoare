@@ -49,5 +49,47 @@ namespace Numere_Pseudoaleatoare
             return TipAleatorism.Nesatisfacator;
         }
 
+        public void TestFrecventaCuOcteti(int[] FrecventaOcteti)
+        {
+            double rezultat = 0;
+            int LungimeaSir = 0;
+           
+            for (int i = 0; i < FrecventaOcteti.Length; i++)
+                LungimeaSir += FrecventaOcteti[i];
+            double LungimeaSirPeNrDeCaractere = (double)LungimeaSir / 256;
+            for (int i=0;i<FrecventaOcteti.Length;i++)
+            {
+                if(FrecventaOcteti[i]!=0)
+                rezultat += ((FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere) * (FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
+            }
+            if (rezultat < 301.128)
+                MessageBox.Show("Aleatorism foarte bun");
+            if (rezultat >= 301.128 && rezultat < 316.939)
+                MessageBox.Show("Aleatorism bun");
+            if (rezultat > 316.93)
+                MessageBox.Show("Aleatorism nesatisfacator");
+        }
+        
+        public void TestFrecventaCharacterHexa(int[] FrecventaCaracterHexa)
+        {
+            double rezultat = 0;
+            int LungimeaSir = 0;
+
+            for (int i = 0; i < FrecventaCaracterHexa.Length; i++)
+                LungimeaSir += FrecventaCaracterHexa[i];
+            double LungimeaSirPeNrDeCaractere = (double)LungimeaSir / 16;
+            for (int i = 0; i < FrecventaCaracterHexa.Length; i++)
+            {
+                if (FrecventaCaracterHexa[i] != 0)
+                    rezultat += ((FrecventaCaracterHexa[i] - LungimeaSirPeNrDeCaractere) * (FrecventaCaracterHexa[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
+            }
+            if (rezultat < 24.996)
+                MessageBox.Show("Aleatorism foarte bun");
+            if (rezultat >= 24.996 && rezultat < 30.578)
+                MessageBox.Show("Aleatorism bun");
+            if (rezultat > 30.578)
+                MessageBox.Show("Aleatorism nesatisfacator");
+        }
+
     }
 }

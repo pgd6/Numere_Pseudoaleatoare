@@ -23,12 +23,19 @@ namespace Numere_Pseudoaleatoare
         private void Main_Form_Load(object sender, EventArgs e)
         {
             btn_ClearFile_Toggle(false);
-            
-            int[] nIntArray = RandomGenerator.RandomArray(100);
-            int[] nByteArray = RandomGenerator.ConvertToByteArray(nIntArray);
-            string sStringArray = RandomGenerator.Frecventa(nByteArray);
-            int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
-            int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
+
+            RandomGenerator GeneratorRandom = new RandomGenerator();
+            TesteAleatorism TesteAleatorism = new TesteAleatorism();
+            int[] nIntArray = GeneratorRandom.RandomArray(100);
+            int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
+            string[] sHexArray = GeneratorRandom.ConvertToHex(nIntArray);
+            int[] nFrecventaHex = GeneratorRandom.FrecventaHex(sHexArray);
+            string sStringArray = GeneratorRandom.Frecventa(nByteArray);
+            int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
+            int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);
+            int[] nFrecventaCaracterHex = GeneratorRandom.FrecventaCaracterHex(sHexArray);
+            TesteAleatorism.TestFrecventaCharacterHexa(nFrecventaCaracterHex);
+            TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
