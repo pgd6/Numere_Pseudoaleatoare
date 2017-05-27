@@ -39,7 +39,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_TestFrecvDibiti = new System.Windows.Forms.Button();
+            this.btn_TestFrecvBiti = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,13 +109,13 @@
             // 
             this.howToUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("howToUseToolStripMenuItem.Image")));
             this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.howToUseToolStripMenuItem.Text = "How to use";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -134,21 +135,32 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_TestFrecvDibiti);
+            this.panel1.Controls.Add(this.btn_TestFrecvBiti);
             this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 411);
             this.panel1.TabIndex = 15;
             // 
-            // button1
+            // btn_TestFrecvDibiti
             // 
-            this.button1.Location = new System.Drawing.Point(38, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_TestFrecvDibiti.Location = new System.Drawing.Point(3, 65);
+            this.btn_TestFrecvDibiti.Name = "btn_TestFrecvDibiti";
+            this.btn_TestFrecvDibiti.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvDibiti.TabIndex = 1;
+            this.btn_TestFrecvDibiti.Text = "Test Frecventa Dibiti";
+            this.btn_TestFrecvDibiti.UseVisualStyleBackColor = true;
+            this.btn_TestFrecvDibiti.Click += new System.EventHandler(this.btn_TestFrecvDibiti_Click);
+            // 
+            // btn_TestFrecvBiti
+            // 
+            this.btn_TestFrecvBiti.Location = new System.Drawing.Point(3, 3);
+            this.btn_TestFrecvBiti.Name = "btn_TestFrecvBiti";
+            this.btn_TestFrecvBiti.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvBiti.TabIndex = 0;
+            this.btn_TestFrecvBiti.Text = "Test Frecventa Biti";
+            this.btn_TestFrecvBiti.UseVisualStyleBackColor = true;
+            this.btn_TestFrecvBiti.Click += new System.EventHandler(this.btn_TestFrecvBiti_Click);
             // 
             // Main_Form
             // 
@@ -186,7 +198,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_TestFrecvBiti;
+        private System.Windows.Forms.Button btn_TestFrecvDibiti;
     }
 }
 

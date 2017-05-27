@@ -23,14 +23,12 @@ namespace Numere_Pseudoaleatoare
         private void Main_Form_Load(object sender, EventArgs e)
         {
             btn_ClearFile_Toggle(false);
-
-            RandomGenerator GeneratorRandom = new RandomGenerator();
-            TesteAleatorism TesteAleatorism = new TesteAleatorism();
-            int[] nIntArray = GeneratorRandom.RandomArray(100);
-            int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
-            string sStringArray = GeneratorRandom.Frecventa(nByteArray);
-            int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
-            int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);
+            
+            int[] nIntArray = RandomGenerator.RandomArray(100);
+            int[] nByteArray = RandomGenerator.ConvertToByteArray(nIntArray);
+            string sStringArray = RandomGenerator.Frecventa(nByteArray);
+            int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
+            int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
@@ -98,7 +96,7 @@ namespace Numere_Pseudoaleatoare
         private void InitializeFileString(String str)
         {
             str = Regex.Replace(str, "[^0-9]", " ");
-            str = Regex.Replace(str, @"\s{2,}", " ").TrimEnd();
+            str = Regex.Replace(str, @"\s{2,}", " ").TrimEnd().TrimStart();
             Program.fileString = str;
         }
 
@@ -124,7 +122,7 @@ namespace Numere_Pseudoaleatoare
             {
                 tmpStringBuilder.Append(Program.GetIntBinaryString(tmpInt));
             }
-
+            successful = true;
             return tmpStringBuilder.ToString();
         }
 
@@ -134,5 +132,32 @@ namespace Numere_Pseudoaleatoare
             GetBitString(out successful);
         }
 
+        private void btn_TestFrecvBiti_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text = String.Empty;
+            tb_Main.Text += "Test Frecventa Biti \r\n";
+            String bitString = GetBitString(out bool successful);
+            TipAleatorism tip = TipAleatorism.Eroare;
+            if (successful)
+            {
+               tip  = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
+            }
+
+            tb_Main.Text += tip.ToString();
+        }
+
+        private void btn_TestFrecvDibiti_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text = String.Empty;
+            tb_Main.Text += "Test Frecventa Biti \r\n";
+            String bitString = GetBitString(out bool successful);
+            TipAleatorism tip = TipAleatorism.Eroare;
+            if (successful)
+            {
+                tip = TesteAleatorism.TestSparge2Biti(RandomGenerator.SpargInDoiBiti(bitString));
+            }
+
+            tb_Main.Text += tip.ToString();
+        }
     }
 }

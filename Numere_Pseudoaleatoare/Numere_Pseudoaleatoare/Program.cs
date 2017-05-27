@@ -38,7 +38,12 @@ namespace Numere_Pseudoaleatoare
                 pos--;
                 i++;
             }
-            return new string(b);
+            char[] a = new char[8];
+            for(int j=24;j<32;++j)
+            {
+                a[j - 24] = b[j];
+            }
+            return new string(a);
         }
     }
 }

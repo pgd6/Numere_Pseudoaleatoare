@@ -8,19 +8,20 @@ namespace Numere_Pseudoaleatoare
 {
     class RandomGenerator
     {
-        Random randomNumber = new Random();
 
-        public int[] RandomArray(int nLength)
+        public static int[] RandomArray(int nLength)
         {
+            Random randomNumber = new Random();
             int[] nRandomArray = new int[nLength];
-            for(int i=0;i<nLength-1;i++)
+
+            for (int i=0;i<nLength-1;i++)
             {
                 nRandomArray[i] = randomNumber.Next(0,256);
             }
             return nRandomArray;
         }
 
-        public int[] ConvertToByteArray(int[] nIntArray)
+        public static int[] ConvertToByteArray(int[] nIntArray)
         {
             int[] nByteArray = new int[nIntArray.Length];
             for(int i=0;i<nIntArray.Length;i++)
@@ -30,7 +31,7 @@ namespace Numere_Pseudoaleatoare
             return nByteArray;
         }
 
-        public string Frecventa(int[] nByteArray)
+        public static string Frecventa(int[] nByteArray)
         {
             string sFrecventa = null;
             for (int i = 0; i < nByteArray.Length; i++)
@@ -40,7 +41,7 @@ namespace Numere_Pseudoaleatoare
             return sFrecventa;
         }
 
-        public int[] NumarDe0si1 (string sFrecventa)
+        public static int[] NumarDe0si1 (string sFrecventa)
         {
             int[] nNumara0si1 = new int[2];
             char[] cCharArray = sFrecventa.ToCharArray();
@@ -54,7 +55,7 @@ namespace Numere_Pseudoaleatoare
             return nNumara0si1;
         }
 
-        public int[] SpargInDoiBiti(string sFrecventa)
+        public static int[] SpargInDoiBiti(string sFrecventa)
         {
             int nLungimeFrecventa = sFrecventa.Length;
             int[] nSpargInDoiBiti = new int[4]; // 0= 00 1=11 2=01 3=10
