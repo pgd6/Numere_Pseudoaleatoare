@@ -21,10 +21,13 @@ namespace Numere_Pseudoaleatoare
         private void Main_Form_Load(object sender, EventArgs e)
         {
             btn_ClearFile_Toggle(false);
-            RandomGenerator test = new RandomGenerator();
-            int[] nIntarray = test.RandomArray(100);
-            int[] nByteAray = test.ConvertToByteArray(nIntarray);
-
+            RandomGenerator GeneratorRandom = new RandomGenerator();
+            TesteAleatorism TesteAleatorism = new TesteAleatorism();
+            int[] nIntArray = GeneratorRandom.RandomArray(100);
+            int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
+            string sStringArray = GeneratorRandom.Frecventa(nByteArray);
+            int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
+            TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
         }
 
         private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
