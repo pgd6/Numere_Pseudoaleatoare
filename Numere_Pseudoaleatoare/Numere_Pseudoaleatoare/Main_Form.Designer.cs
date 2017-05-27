@@ -41,7 +41,7 @@
             // btn_File
             // 
             this.btn_File.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_File.Location = new System.Drawing.Point(12, 344);
+            this.btn_File.Location = new System.Drawing.Point(12, 298);
             this.btn_File.Name = "btn_File";
             this.btn_File.Size = new System.Drawing.Size(75, 23);
             this.btn_File.TabIndex = 0;
@@ -52,7 +52,7 @@
             // tb_File
             // 
             this.tb_File.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tb_File.Location = new System.Drawing.Point(93, 346);
+            this.tb_File.Location = new System.Drawing.Point(93, 300);
             this.tb_File.Name = "tb_File";
             this.tb_File.ReadOnly = true;
             this.tb_File.Size = new System.Drawing.Size(315, 20);
@@ -62,7 +62,7 @@
             // btn_ClearFile
             // 
             this.btn_ClearFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_ClearFile.Location = new System.Drawing.Point(414, 344);
+            this.btn_ClearFile.Location = new System.Drawing.Point(414, 298);
             this.btn_ClearFile.Name = "btn_ClearFile";
             this.btn_ClearFile.Size = new System.Drawing.Size(75, 23);
             this.btn_ClearFile.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 379);
+            this.ClientSize = new System.Drawing.Size(588, 333);
             this.Controls.Add(this.btn_ClearFile);
             this.Controls.Add(this.tb_File);
             this.Controls.Add(this.btn_File);
