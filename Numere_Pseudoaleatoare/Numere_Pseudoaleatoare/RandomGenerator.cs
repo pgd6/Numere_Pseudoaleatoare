@@ -51,6 +51,7 @@ namespace Numere_Pseudoaleatoare
             }
             return sFrecventaHex;
         }
+
         public string Frecventa(int[] nByteArray)
         {
             string sFrecventa = null;
@@ -59,6 +60,61 @@ namespace Numere_Pseudoaleatoare
                 sFrecventa += Convert.ToString(nByteArray[i]);
             }
             return sFrecventa;
+        }
+        static string ConvertStringArrayToString(string[] array)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (string value in array)
+            {
+                builder.Append(value);
+                builder.Append('.');
+            }
+            return builder.ToString();
+        }
+
+        public int[] FrecventaCaracterHex(string[] HexArray)
+        {
+            string sHexArray = ConvertStringArrayToString(HexArray);
+            char[] cHexArray = sHexArray.ToCharArray();
+            int[] FrecventaCaracterHex = new int[16];
+            for(int i=0;i<cHexArray.Length;i++)
+            {
+                if (cHexArray[i] == '0')
+                    FrecventaCaracterHex[0]++;
+                if (cHexArray[i] == '1')
+                    FrecventaCaracterHex[1]++;
+                if (cHexArray[i] == '2')
+                    FrecventaCaracterHex[2]++;
+                if (cHexArray[i] == '3')
+                    FrecventaCaracterHex[3]++;
+                if (cHexArray[i] == '4')
+                    FrecventaCaracterHex[4]++;
+                if (cHexArray[i] == '5')
+                    FrecventaCaracterHex[5]++;
+                if (cHexArray[i] == '5')
+                    FrecventaCaracterHex[5]++;
+                if (cHexArray[i] == '6')
+                    FrecventaCaracterHex[6]++;
+                if (cHexArray[i] == '7')
+                    FrecventaCaracterHex[7]++;
+                if (cHexArray[i] == '8')
+                    FrecventaCaracterHex[8]++;
+                if (cHexArray[i] == '9')
+                    FrecventaCaracterHex[9]++;
+                if (cHexArray[i] == 'A')
+                    FrecventaCaracterHex[10]++;
+                if (cHexArray[i] == 'B')
+                    FrecventaCaracterHex[11]++;
+                if (cHexArray[i] == 'C')
+                    FrecventaCaracterHex[12]++;
+                if (cHexArray[i] == 'D')
+                    FrecventaCaracterHex[13]++;
+                if (cHexArray[i] == 'E')
+                    FrecventaCaracterHex[14]++;
+                if (cHexArray[i] == 'F')
+                    FrecventaCaracterHex[15]++;
+            }
+            return FrecventaCaracterHex;
         }
 
         public int[] NumarDe0si1 (string sFrecventa)
