@@ -20,6 +20,9 @@ namespace Numere_Pseudoaleatoare
         private void Main_Form_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Hello Fgt");
+            RandomGenerator test = new RandomGenerator();
+            int[] nIntarray = test.RandomArray(100);
+            int[] nByteAray = test.ConvertToByteArray(nIntarray);
         }
 
         private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
