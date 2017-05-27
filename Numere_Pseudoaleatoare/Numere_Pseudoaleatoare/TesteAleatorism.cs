@@ -22,5 +22,24 @@ namespace Numere_Pseudoaleatoare
                 MessageBox.Show("Aleatorism nesatisfacator");
         }
 
+        public void TestSpage2Biti(int[] Sparge2Biti)
+        {
+            int n00, n11, n01, n10;
+            n00 = Sparge2Biti[0];
+            n11 = Sparge2Biti[1];
+            n01 = Sparge2Biti[2];
+            n10 = Sparge2Biti[3];
+            int n4 = (n00+n11+n01+n10)/ 4;
+
+            double rezultat = (((n00 - n4) * (n00 - n4)) / n4) + (((n11 - n4) * (n11 - n4)) / n4) + (((n01 - n4) * (n01 - n4)) / n4) + (((n10 - n4) * (n10 - n4)) / n4);
+
+            if(rezultat < 7.815)
+                MessageBox.Show("Aleatorism foarte bun");
+            if(rezultat >= 7.815 && rezultat < 11.341)
+                MessageBox.Show("Aleatorism bun");
+            if (rezultat > 11.341)
+                MessageBox.Show("Aleatorism nesatisfacator");
+        }
+
     }
 }

@@ -54,5 +54,30 @@ namespace Numere_Pseudoaleatoare
             return nNumara0si1;
         }
 
+        public int[] SpargInDoiBiti(string sFrecventa)
+        {
+            int nLungimeFrecventa = sFrecventa.Length;
+            int[] nSpargInDoiBiti = new int[4]; // 0= 00 1=11 2=01 3=10
+            char[] cCharArray = sFrecventa.ToCharArray();
+            if (sFrecventa.Length % 2 != 0)
+                nLungimeFrecventa = sFrecventa.Length - 1;
+            for(int i=0;i<nLungimeFrecventa; i=i+2)
+            {
+                string s = Convert.ToString(cCharArray[i]) + Convert.ToString(cCharArray[i + 1]);
+                if (s == "00")
+                    nSpargInDoiBiti[0]++;
+                else
+                if (s == "11")
+                    nSpargInDoiBiti[1]++;
+                else
+                if (s == "01")
+                    nSpargInDoiBiti[2]++;
+                else
+                if (s == "10")
+                    nSpargInDoiBiti[3]++;
+            }
+            return nSpargInDoiBiti;
+        }
+
     }
 }

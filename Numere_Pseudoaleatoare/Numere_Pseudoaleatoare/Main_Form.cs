@@ -27,7 +27,9 @@ namespace Numere_Pseudoaleatoare
             int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
             string sStringArray = GeneratorRandom.Frecventa(nByteArray);
             int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
+            int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);
             TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
+            TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
 
         private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
