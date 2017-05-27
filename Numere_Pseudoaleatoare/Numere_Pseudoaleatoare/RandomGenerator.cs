@@ -31,7 +31,7 @@ namespace Numere_Pseudoaleatoare
             return nByteArray;
         }
 
-        public string[] ConvertToHex (int[] nIntArray)
+        public static string[] ConvertToHex (int[] nIntArray)
         {
             string[] sHexArray = new string[nIntArray.Length];
             for(int i=0;i<nIntArray.Length;i++)
@@ -41,7 +41,7 @@ namespace Numere_Pseudoaleatoare
             return sHexArray;
         }
 
-        public int[] FrecventaHex(string[] sHexArray)
+        public static int[] FrecventaHex(string[] sHexArray)
         {
             int[] sFrecventaHex = new int[256];
             for(int i=0;i<sHexArray.Length;i++)
@@ -52,7 +52,7 @@ namespace Numere_Pseudoaleatoare
             return sFrecventaHex;
         }
 
-        public string Frecventa(int[] nByteArray)
+        public static string Frecventa(int[] nByteArray)
         {
             string sFrecventa = null;
             for (int i = 0; i < nByteArray.Length; i++)
@@ -61,7 +61,8 @@ namespace Numere_Pseudoaleatoare
             }
             return sFrecventa;
         }
-        static string ConvertStringArrayToString(string[] array)
+
+        public static string ConvertStringArrayToString(string[] array)
         {
             StringBuilder builder = new StringBuilder();
             foreach (string value in array)
@@ -72,7 +73,7 @@ namespace Numere_Pseudoaleatoare
             return builder.ToString();
         }
 
-        public int[] FrecventaCaracterHex(string[] HexArray)
+        public static int[] FrecventaDihex(string[] HexArray)
         {
             string sHexArray = ConvertStringArrayToString(HexArray);
             char[] cHexArray = sHexArray.ToCharArray();

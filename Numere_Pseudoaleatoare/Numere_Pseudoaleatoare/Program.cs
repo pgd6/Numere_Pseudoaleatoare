@@ -9,6 +9,7 @@ namespace Numere_Pseudoaleatoare
     static class Program
     {
         public static String fileString=String.Empty;
+        public static int[] fileInt;
 
         [STAThread]
         static void Main()

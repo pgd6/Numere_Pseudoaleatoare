@@ -24,16 +24,14 @@ namespace Numere_Pseudoaleatoare
         {
             btn_ClearFile_Toggle(false);
 
-            RandomGenerator GeneratorRandom = new RandomGenerator();
-            TesteAleatorism TesteAleatorism = new TesteAleatorism();
-            int[] nIntArray = GeneratorRandom.RandomArray(100);
-            int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
-            string[] sHexArray = GeneratorRandom.ConvertToHex(nIntArray);
-            int[] nFrecventaHex = GeneratorRandom.FrecventaHex(sHexArray);
-            string sStringArray = GeneratorRandom.Frecventa(nByteArray);
-            int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
-            int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);
-            int[] nFrecventaCaracterHex = GeneratorRandom.FrecventaCaracterHex(sHexArray);
+            int[] nIntArray = RandomGenerator.RandomArray(100);
+            int[] nByteArray = RandomGenerator.ConvertToByteArray(nIntArray);
+            string[] sHexArray = RandomGenerator.ConvertToHex(nIntArray);
+            int[] nFrecventaHex = RandomGenerator.FrecventaHex(sHexArray);
+            string sStringArray = RandomGenerator.Frecventa(nByteArray);
+            int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
+            int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
+            int[] nFrecventaCaracterHex = RandomGenerator.FrecventaDihex(sHexArray);
             TesteAleatorism.TestFrecventaCharacterHexa(nFrecventaCaracterHex);
             TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
@@ -76,6 +74,7 @@ namespace Numere_Pseudoaleatoare
             tb_File.Text = String.Empty;
             OpenFileDialog = new OpenFileDialog();
             Program.fileString = String.Empty;
+            Program.fileInt = new int[0];
 
             btn_ClearFile_Toggle(false);
         }
@@ -124,6 +123,11 @@ namespace Numere_Pseudoaleatoare
             {
                 numbers.Add(int.Parse(str));
             }
+            Program.fileInt = new int[numbers.Count];
+            for (int i = 0; i < numbers.Count; ++i)
+            {
+                Program.fileInt[i] = numbers[i];
+            }
 
             foreach (int tmpInt in numbers)
             {
@@ -131,12 +135,6 @@ namespace Numere_Pseudoaleatoare
             }
             successful = true;
             return tmpStringBuilder.ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bool successful;
-            GetBitString(out successful);
         }
 
         private void btn_TestFrecvBiti_Click(object sender, EventArgs e)
@@ -147,7 +145,7 @@ namespace Numere_Pseudoaleatoare
             TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-               tip  = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
+                tip = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
             }
 
             tb_Main.Text += tip.ToString();
@@ -156,12 +154,40 @@ namespace Numere_Pseudoaleatoare
         private void btn_TestFrecvDibiti_Click(object sender, EventArgs e)
         {
             tb_Main.Text = String.Empty;
-            tb_Main.Text += "Test Frecventa Biti \r\n";
+            tb_Main.Text += "Test Frecventa Dibiti \r\n";
             String bitString = GetBitString(out bool successful);
             TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
                 tip = TesteAleatorism.TestSparge2Biti(RandomGenerator.SpargInDoiBiti(bitString));
+            }
+
+            tb_Main.Text += tip.ToString();
+        }
+
+        private void btn_TestFrecvHex_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text = String.Empty;
+            tb_Main.Text += "Test Frecventa Hexazecimale \r\n";
+            String bitString = GetBitString(out bool successful);
+            TipAleatorism tip = TipAleatorism.Eroare;
+            if (successful)
+            {
+                tip = TesteAleatorism.TestFrecventaCharacterHexa(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
+            }
+
+            tb_Main.Text += tip.ToString();
+        }
+
+        private void btn_TestFrecvDiHex_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text = String.Empty;
+            tb_Main.Text += "Test Frecventa Dihexazecimala \r\n";
+            String bitString = GetBitString(out bool successful);
+            TipAleatorism tip = TipAleatorism.Eroare;
+            if (successful)
+            {
+                tip = TesteAleatorism.TestFrecventaCharacterHexa(RandomGenerator.FrecventaDihex(RandomGenerator.ConvertToHex(Program.fileInt)));
             }
 
             tb_Main.Text += tip.ToString();

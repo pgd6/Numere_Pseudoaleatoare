@@ -18,8 +18,7 @@ namespace Numere_Pseudoaleatoare
             {
                 return TipAleatorism.Foarte_Bun;
             }
-            else
-            if (Rezultat >= 3.841 && Rezultat < 6.635)
+            else if (Rezultat >= 3.841 && Rezultat < 6.635)
             {
                 return TipAleatorism.Bun;
             }
@@ -41,36 +40,38 @@ namespace Numere_Pseudoaleatoare
             {
                 return TipAleatorism.Foarte_Bun;
             }
-            else
-            if (rezultat >= 7.815 && rezultat < 11.341)
+            else if (rezultat >= 7.815 && rezultat < 11.341)
             {
                 return TipAleatorism.Bun;
             }
             return TipAleatorism.Nesatisfacator;
         }
 
-        public void TestFrecventaCuOcteti(int[] FrecventaOcteti)
+        public static TipAleatorism TestFrecventaCuOcteti(int[] FrecventaOcteti)
         {
             double rezultat = 0;
             int LungimeaSir = 0;
-           
+
             for (int i = 0; i < FrecventaOcteti.Length; i++)
                 LungimeaSir += FrecventaOcteti[i];
             double LungimeaSirPeNrDeCaractere = (double)LungimeaSir / 256;
-            for (int i=0;i<FrecventaOcteti.Length;i++)
+            for (int i = 0; i < FrecventaOcteti.Length; i++)
             {
-                if(FrecventaOcteti[i]!=0)
-                rezultat += ((FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere) * (FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
+                if (FrecventaOcteti[i] != 0)
+                    rezultat += ((FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere) * (FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
             }
             if (rezultat < 301.128)
-                MessageBox.Show("Aleatorism foarte bun");
-            if (rezultat >= 301.128 && rezultat < 316.939)
-                MessageBox.Show("Aleatorism bun");
-            if (rezultat > 316.93)
-                MessageBox.Show("Aleatorism nesatisfacator");
+            {
+                return TipAleatorism.Foarte_Bun;
+            }
+            else if (rezultat >= 301.128 && rezultat < 316.939)
+            {
+                return TipAleatorism.Bun;
+            }
+            return TipAleatorism.Nesatisfacator;
         }
-        
-        public void TestFrecventaCharacterHexa(int[] FrecventaCaracterHexa)
+
+        public static TipAleatorism TestFrecventaCharacterHexa(int[] FrecventaCaracterHexa)
         {
             double rezultat = 0;
             int LungimeaSir = 0;
@@ -84,11 +85,14 @@ namespace Numere_Pseudoaleatoare
                     rezultat += ((FrecventaCaracterHexa[i] - LungimeaSirPeNrDeCaractere) * (FrecventaCaracterHexa[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
             }
             if (rezultat < 24.996)
-                MessageBox.Show("Aleatorism foarte bun");
-            if (rezultat >= 24.996 && rezultat < 30.578)
-                MessageBox.Show("Aleatorism bun");
-            if (rezultat > 30.578)
-                MessageBox.Show("Aleatorism nesatisfacator");
+            {
+                return TipAleatorism.Foarte_Bun;
+            }
+            else if (rezultat >= 24.996 && rezultat < 30.578)
+            {
+                return TipAleatorism.Bun;
+            }
+            return TipAleatorism.Nesatisfacator;
         }
 
     }
