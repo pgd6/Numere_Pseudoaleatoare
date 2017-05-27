@@ -15,7 +15,7 @@ namespace Numere_Pseudoaleatoare
             int[] nRandomArray = new int[nLength-1];
             for(int i=0;i<nLength-1;i++)
             {
-                nRandomArray[i] = randomNumber.Next(0,byte.MaxValue);
+                nRandomArray[i] = randomNumber.Next(0,256);
             }
             return nRandomArray;
         }
@@ -25,9 +25,10 @@ namespace Numere_Pseudoaleatoare
             int[] bByteArray = new int[nIntArray.Length];
             for(int i=0;i<nIntArray.Length;i++)
             {
-                bByteArray[i] = Convert.ToInt32(Convert.ToString(nIntArray[i],2));
+                bByteArray[i] = Convert.ToInt32(Convert.ToString(nIntArray[i], 2));
             }
             return bByteArray;
         }
+
     }
 }
