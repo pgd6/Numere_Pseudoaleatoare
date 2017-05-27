@@ -25,6 +25,8 @@ namespace Numere_Pseudoaleatoare
             TesteAleatorism TesteAleatorism = new TesteAleatorism();
             int[] nIntArray = GeneratorRandom.RandomArray(100);
             int[] nByteArray = GeneratorRandom.ConvertToByteArray(nIntArray);
+            string[] sHexArray = GeneratorRandom.ConvertToHex(nIntArray);
+            int[] nFrecventaHex = GeneratorRandom.FrecventaHex(sHexArray);
             string sStringArray = GeneratorRandom.Frecventa(nByteArray);
             int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
             int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);

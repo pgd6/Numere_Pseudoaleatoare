@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,9 @@ namespace Numere_Pseudoaleatoare
         public int[] RandomArray(int nLength)
         {
             int[] nRandomArray = new int[nLength];
-            for(int i=0;i<nLength-1;i++)
+            for(int i=0;i<nLength;i++)
             {
-                nRandomArray[i] = randomNumber.Next(0,256);
+                nRandomArray[i] = randomNumber.Next(0,255);
             }
             return nRandomArray;
         }
@@ -30,6 +31,26 @@ namespace Numere_Pseudoaleatoare
             return nByteArray;
         }
 
+        public string[] ConvertToHex (int[] nIntArray)
+        {
+            string[] sHexArray = new string[nIntArray.Length];
+            for(int i=0;i<nIntArray.Length;i++)
+            {
+                sHexArray[i] = nIntArray[i].ToString("X");
+            }
+            return sHexArray;
+        }
+
+        public int[] FrecventaHex(string[] sHexArray)
+        {
+            int[] sFrecventaHex = new int[256];
+            for(int i=0;i<sHexArray.Length;i++)
+            {
+                int pozitie = int.Parse(sHexArray[i], NumberStyles.HexNumber);
+                sFrecventaHex[pozitie]++;
+            }
+            return sFrecventaHex;
+        }
         public string Frecventa(int[] nByteArray)
         {
             string sFrecventa = null;
