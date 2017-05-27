@@ -41,5 +41,20 @@ namespace Numere_Pseudoaleatoare
                 MessageBox.Show("Aleatorism nesatisfacator");
         }
 
+        public void TestFrecventaCuOcteti(int[] FrecventaOcteti)
+        {
+            double rezultat = 0;
+            int LungimeaSir = 0;
+           
+            for (int i = 0; i < FrecventaOcteti.Length; i++)
+                LungimeaSir += FrecventaOcteti[i];
+            double LungimeaSirPeNrDeCaractere = (double)LungimeaSir / 256;
+            for (int i=0;i<FrecventaOcteti.Length;i++)
+            {
+                if(FrecventaOcteti[i]!=0)
+                rezultat += ((FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere) * (FrecventaOcteti[i] - LungimeaSirPeNrDeCaractere)) / LungimeaSirPeNrDeCaractere;
+            }
+        }
+
     }
 }

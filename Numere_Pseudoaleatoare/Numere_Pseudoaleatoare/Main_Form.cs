@@ -33,6 +33,7 @@ namespace Numere_Pseudoaleatoare
             string sStringArray = GeneratorRandom.Frecventa(nByteArray);
             int[] nNumarAparitii = GeneratorRandom.NumarDe0si1(sStringArray);
             int[] nSpargeIn2Biti = GeneratorRandom.SpargInDoiBiti(sStringArray);
+            TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
