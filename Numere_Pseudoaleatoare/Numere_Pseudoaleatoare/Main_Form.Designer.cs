@@ -67,17 +67,17 @@
             this.tb_File.Location = new System.Drawing.Point(93, 460);
             this.tb_File.Name = "tb_File";
             this.tb_File.ReadOnly = true;
-            this.tb_File.Size = new System.Drawing.Size(651, 20);
+            this.tb_File.Size = new System.Drawing.Size(631, 20);
             this.tb_File.TabIndex = 1;
             // 
             // btn_ClearFile
             // 
             this.btn_ClearFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearFile.Location = new System.Drawing.Point(750, 458);
+            this.btn_ClearFile.Location = new System.Drawing.Point(730, 458);
             this.btn_ClearFile.Name = "btn_ClearFile";
-            this.btn_ClearFile.Size = new System.Drawing.Size(75, 23);
+            this.btn_ClearFile.Size = new System.Drawing.Size(95, 23);
             this.btn_ClearFile.TabIndex = 2;
-            this.btn_ClearFile.Text = "Clear File";
+            this.btn_ClearFile.Text = "Clear Selection";
             this.btn_ClearFile.UseVisualStyleBackColor = true;
             this.btn_ClearFile.Click += new System.EventHandler(this.btn_ClearFile_Click);
             // 
@@ -108,13 +108,14 @@
             // 
             this.howToUseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("howToUseToolStripMenuItem.Image")));
             this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.howToUseToolStripMenuItem.Text = "How to use";
+            this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

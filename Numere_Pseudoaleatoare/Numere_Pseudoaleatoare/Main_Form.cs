@@ -211,5 +211,10 @@ namespace Numere_Pseudoaleatoare
 
             tb_Main.Text += tip.ToString();
         }
+
+        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1) Selectati un fisier care contine numere, orice alte caractere vor fi tratate ca spatiu \r\n" + "2) Rulati testele \r\n", "Help", MessageBoxButtons.OK);
+        }
     }
 }
