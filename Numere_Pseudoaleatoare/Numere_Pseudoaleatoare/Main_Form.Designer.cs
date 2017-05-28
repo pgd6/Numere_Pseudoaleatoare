@@ -45,6 +45,8 @@
             this.btn_TestFrecvBiti = new System.Windows.Forms.Button();
             this.btn_DistCar0 = new System.Windows.Forms.Button();
             this.btn_DistCar1 = new System.Windows.Forms.Button();
+            this.btn_TestCorelatiiSeriale = new System.Windows.Forms.Button();
+            this.btn_ClearText = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +54,7 @@
             // btn_File
             // 
             this.btn_File.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_File.Location = new System.Drawing.Point(12, 458);
+            this.btn_File.Location = new System.Drawing.Point(12, 297);
             this.btn_File.Name = "btn_File";
             this.btn_File.Size = new System.Drawing.Size(75, 23);
             this.btn_File.TabIndex = 0;
@@ -62,18 +64,18 @@
             // 
             // tb_File
             // 
-            this.tb_File.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.tb_File.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_File.Location = new System.Drawing.Point(93, 460);
+            this.tb_File.Location = new System.Drawing.Point(93, 299);
             this.tb_File.Name = "tb_File";
             this.tb_File.ReadOnly = true;
-            this.tb_File.Size = new System.Drawing.Size(631, 20);
+            this.tb_File.Size = new System.Drawing.Size(486, 20);
             this.tb_File.TabIndex = 1;
             // 
             // btn_ClearFile
             // 
             this.btn_ClearFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ClearFile.Location = new System.Drawing.Point(730, 458);
+            this.btn_ClearFile.Location = new System.Drawing.Point(585, 299);
             this.btn_ClearFile.Name = "btn_ClearFile";
             this.btn_ClearFile.Size = new System.Drawing.Size(95, 23);
             this.btn_ClearFile.TabIndex = 2;
@@ -83,16 +85,16 @@
             // 
             // tb_Main
             // 
-            this.tb_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tb_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_Main.Location = new System.Drawing.Point(184, 41);
+            this.tb_Main.Location = new System.Drawing.Point(332, 41);
             this.tb_Main.MaxLength = 100000;
             this.tb_Main.Multiline = true;
             this.tb_Main.Name = "tb_Main";
             this.tb_Main.ReadOnly = true;
             this.tb_Main.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_Main.Size = new System.Drawing.Size(641, 411);
+            this.tb_Main.Size = new System.Drawing.Size(449, 252);
             this.tb_Main.TabIndex = 13;
             // 
             // helpToolStripMenuItem
@@ -126,15 +128,16 @@
             this.helpToolStripMenuItem});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(837, 24);
+            this.Menu.Size = new System.Drawing.Size(793, 24);
             this.Menu.TabIndex = 14;
             this.Menu.Text = "menuStrip1";
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_TestCorelatiiSeriale);
             this.panel1.Controls.Add(this.btn_DistCar1);
             this.panel1.Controls.Add(this.btn_DistCar0);
             this.panel1.Controls.Add(this.btn_TestFrecvDiHex);
@@ -143,24 +146,24 @@
             this.panel1.Controls.Add(this.btn_TestFrecvBiti);
             this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(166, 411);
+            this.panel1.Size = new System.Drawing.Size(314, 252);
             this.panel1.TabIndex = 15;
             // 
             // btn_TestFrecvDiHex
             // 
             this.btn_TestFrecvDiHex.Location = new System.Drawing.Point(3, 189);
             this.btn_TestFrecvDiHex.Name = "btn_TestFrecvDiHex";
-            this.btn_TestFrecvDiHex.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvDiHex.Size = new System.Drawing.Size(150, 55);
             this.btn_TestFrecvDiHex.TabIndex = 4;
             this.btn_TestFrecvDiHex.Text = "Test Frecventa Dihexazecimale";
             this.btn_TestFrecvDiHex.UseVisualStyleBackColor = true;
-            this.btn_TestFrecvDiHex.Click += new System.EventHandler(this.btn_TestFrecvDiHex_Click);
+            this.btn_TestFrecvDiHex.Click += new System.EventHandler(this.btn_TestFrecvDihex_Click);
             // 
             // btn_TestFrecvHex
             // 
             this.btn_TestFrecvHex.Location = new System.Drawing.Point(3, 127);
             this.btn_TestFrecvHex.Name = "btn_TestFrecvHex";
-            this.btn_TestFrecvHex.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvHex.Size = new System.Drawing.Size(150, 55);
             this.btn_TestFrecvHex.TabIndex = 3;
             this.btn_TestFrecvHex.Text = "Test Frecventa Hexazecimale";
             this.btn_TestFrecvHex.UseVisualStyleBackColor = true;
@@ -168,9 +171,9 @@
             // 
             // btn_TestFrecvDibiti
             // 
-            this.btn_TestFrecvDibiti.Location = new System.Drawing.Point(3, 65);
+            this.btn_TestFrecvDibiti.Location = new System.Drawing.Point(3, 64);
             this.btn_TestFrecvDibiti.Name = "btn_TestFrecvDibiti";
-            this.btn_TestFrecvDibiti.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvDibiti.Size = new System.Drawing.Size(150, 55);
             this.btn_TestFrecvDibiti.TabIndex = 1;
             this.btn_TestFrecvDibiti.Text = "Test Frecventa Dibiti";
             this.btn_TestFrecvDibiti.UseVisualStyleBackColor = true;
@@ -180,7 +183,7 @@
             // 
             this.btn_TestFrecvBiti.Location = new System.Drawing.Point(3, 3);
             this.btn_TestFrecvBiti.Name = "btn_TestFrecvBiti";
-            this.btn_TestFrecvBiti.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvBiti.Size = new System.Drawing.Size(150, 55);
             this.btn_TestFrecvBiti.TabIndex = 0;
             this.btn_TestFrecvBiti.Text = "Test Frecventa Biti";
             this.btn_TestFrecvBiti.UseVisualStyleBackColor = true;
@@ -188,9 +191,10 @@
             // 
             // btn_DistCar0
             // 
-            this.btn_DistCar0.Location = new System.Drawing.Point(3, 251);
+            this.btn_DistCar0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DistCar0.Location = new System.Drawing.Point(159, 3);
             this.btn_DistCar0.Name = "btn_DistCar0";
-            this.btn_DistCar0.Size = new System.Drawing.Size(158, 56);
+            this.btn_DistCar0.Size = new System.Drawing.Size(150, 55);
             this.btn_DistCar0.TabIndex = 5;
             this.btn_DistCar0.Text = "Test Distanta Caracter \'0\'";
             this.btn_DistCar0.UseVisualStyleBackColor = true;
@@ -198,19 +202,43 @@
             // 
             // btn_DistCar1
             // 
-            this.btn_DistCar1.Location = new System.Drawing.Point(3, 313);
+            this.btn_DistCar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_DistCar1.Location = new System.Drawing.Point(159, 64);
             this.btn_DistCar1.Name = "btn_DistCar1";
-            this.btn_DistCar1.Size = new System.Drawing.Size(158, 56);
+            this.btn_DistCar1.Size = new System.Drawing.Size(150, 55);
             this.btn_DistCar1.TabIndex = 6;
             this.btn_DistCar1.Text = "Test Distanta Caracter \'1\'";
             this.btn_DistCar1.UseVisualStyleBackColor = true;
             this.btn_DistCar1.Click += new System.EventHandler(this.btn_DistCar1_Click);
             // 
+            // btn_TestCorelatiiSeriale
+            // 
+            this.btn_TestCorelatiiSeriale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_TestCorelatiiSeriale.Location = new System.Drawing.Point(159, 127);
+            this.btn_TestCorelatiiSeriale.Name = "btn_TestCorelatiiSeriale";
+            this.btn_TestCorelatiiSeriale.Size = new System.Drawing.Size(150, 55);
+            this.btn_TestCorelatiiSeriale.TabIndex = 7;
+            this.btn_TestCorelatiiSeriale.Text = "Test Corelatii Seriale";
+            this.btn_TestCorelatiiSeriale.UseVisualStyleBackColor = true;
+            this.btn_TestCorelatiiSeriale.Click += new System.EventHandler(this.btn_TestCorelatiiSeriale_Click);
+            // 
+            // btn_ClearText
+            // 
+            this.btn_ClearText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_ClearText.Location = new System.Drawing.Point(686, 299);
+            this.btn_ClearText.Name = "btn_ClearText";
+            this.btn_ClearText.Size = new System.Drawing.Size(95, 23);
+            this.btn_ClearText.TabIndex = 16;
+            this.btn_ClearText.Text = "Clear Text";
+            this.btn_ClearText.UseVisualStyleBackColor = true;
+            this.btn_ClearText.Click += new System.EventHandler(this.btn_ClearText_Click);
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 493);
+            this.ClientSize = new System.Drawing.Size(793, 332);
+            this.Controls.Add(this.btn_ClearText);
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tb_Main);
@@ -248,6 +276,8 @@
         private System.Windows.Forms.Button btn_TestFrecvDiHex;
         private System.Windows.Forms.Button btn_DistCar1;
         private System.Windows.Forms.Button btn_DistCar0;
+        private System.Windows.Forms.Button btn_TestCorelatiiSeriale;
+        private System.Windows.Forms.Button btn_ClearText;
     }
 }
 

@@ -24,20 +24,20 @@ namespace Numere_Pseudoaleatoare
         {
             btn_ClearFile_Toggle(false);
 
-            int[] nIntArray = RandomGenerator.RandomArray(100);
-            int[] nByteArray = RandomGenerator.ConvertToBitArray(nIntArray);
-            string[] sHexArray = RandomGenerator.ConvertToHex(nIntArray);
-            int[] nFrecventaHex = RandomGenerator.FrecventaHex(sHexArray);
-            string sStringArray = RandomGenerator.Frecventa(nByteArray);
-            int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
-            int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
-            int[] nFrecventaCaracterHex = RandomGenerator.FrecventaDihex(sHexArray);
-            int[] nMatriceCorelatiiSeriale = RandomGenerator.MatriceCorelatiiSeriale(sStringArray);
-            TesteAleatorism.TestFrecventaCharacterHexa(nFrecventaCaracterHex);
-            TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
-            TesteAleatorism.TestCorealtiiSeriale(nMatriceCorelatiiSeriale, nSpargeIn2Biti);
-            // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
-            //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
+            //int[] nIntArray = RandomGenerator.RandomArray(100);
+            //int[] nByteArray = RandomGenerator.ConvertToBitArray(nIntArray);
+            //string[] sHexArray = RandomGenerator.ConvertToHex(nIntArray);
+            //int[] nFrecventaHex = RandomGenerator.FrecventaHex(sHexArray);
+            //string sStringArray = RandomGenerator.Frecventa(nByteArray);
+            //int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
+            //int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
+            //int[] nFrecventaCaracterHex = RandomGenerator.FrecventaDihex(sHexArray);
+            //int[] nMatriceCorelatiiSeriale = RandomGenerator.MatriceCorelatiiSeriale(sStringArray);
+            //TesteAleatorism.TestFrecventaDihex(nFrecventaCaracterHex);
+            //TesteAleatorism.TestFrecventaHex(nFrecventaHex);
+            //TesteAleatorism.TestCorealtiiSeriale(nMatriceCorelatiiSeriale, nSpargeIn2Biti);
+            //TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
+            //TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
 
         private void btn_File_Click(object sender, EventArgs e)
@@ -91,6 +91,11 @@ namespace Numere_Pseudoaleatoare
             MessageBox.Show("Student: George-Dan PRODAN \r\n" + "Profesor Coordonator: Lect. Univ. Dr. Dan-Laurentiu GRECU \r\n\r\n" + "Universitatea \"Titu Maiorescu\" Bucuresti \r\n" + "Sesiunea Iunie/Iulie 2017", "About", MessageBoxButtons.OK);
         }
 
+        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1) Selectati un fisier care contine numere, orice alte caractere vor fi tratate ca spatiu \r\n\r\n" + "2) Rulati testele \r\n", "Help", MessageBoxButtons.OK);
+        }
+
         private void InitializeFileString(String str)
         {
             str = Regex.Replace(str, "[^0-9]", " ");
@@ -131,91 +136,120 @@ namespace Numere_Pseudoaleatoare
 
         private void btn_TestFrecvBiti_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
-            TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
+                tb_Main.Text = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
         private void btn_TestFrecvDibiti_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
-            TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.TestSparge2Biti(RandomGenerator.SpargInDoiBiti(bitString));
+                tb_Main.Text = TesteAleatorism.TestSparge2Biti(RandomGenerator.SpargInDoiBiti(bitString));
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
         private void btn_TestFrecvHex_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
-            TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.TestFrecventaCuOcteti(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
+                tb_Main.Text = TesteAleatorism.TestFrecventaHex(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
-        private void btn_TestFrecvDiHex_Click(object sender, EventArgs e)
+        private void btn_TestFrecvDihex_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
-            TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.TestFrecventaCharacterHexa(RandomGenerator.FrecventaDihex(RandomGenerator.ConvertToHex(Program.fileInt)));
+                tb_Main.Text = TesteAleatorism.TestFrecventaDihex(RandomGenerator.FrecventaDihex(RandomGenerator.ConvertToHex(Program.fileInt)));
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
         private void btn_DistCar0_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
-            TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.DistantaCaractere(bitString, '0');
+                tb_Main.Text = TesteAleatorism.DistantaCaractere(bitString, '0');
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
         private void btn_DistCar1_Click(object sender, EventArgs e)
         {
-            tb_Main.Text = String.Empty;
             tb_Main.Text += ((Button)sender).Text + "\r\n";
             String bitString = GetBitString(out bool successful);
             TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.DistantaCaractere(bitString, '1');
+                tb_Main.Text = TesteAleatorism.DistantaCaractere(bitString, '1');
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
-            tb_Main.Text += tip.ToString();
+            tb_Main.Text += "\r\n\r\n";
         }
 
-        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_TestCorelatiiSeriale_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1) Selectati un fisier care contine numere, orice alte caractere vor fi tratate ca spatiu \r\n" + "2) Rulati testele \r\n", "Help", MessageBoxButtons.OK);
+            tb_Main.Text += ((Button)sender).Text + "\r\n";
+            String bitString = GetBitString(out bool successful);
+            if (successful)
+            {
+                tb_Main.Text = TesteAleatorism.TestCorealtiiSeriale(RandomGenerator.MatriceCorelatiiSeriale(Program.fileString), RandomGenerator.SpargInDoiBiti(Program.fileString));
+            }
+            else
+            {
+                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+            }
+
+            tb_Main.Text += "\r\n\r\n";
+        }
+
+        private void btn_ClearText_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text = String.Empty;
         }
     }
 }

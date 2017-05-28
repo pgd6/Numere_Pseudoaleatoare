@@ -8,7 +8,7 @@ namespace Numere_Pseudoaleatoare
 {
     static class Program
     {
-        public static String fileString=String.Empty;
+        public static String fileString = String.Empty;
         public static int[] fileInt;
 
         [STAThread]
@@ -18,7 +18,6 @@ namespace Numere_Pseudoaleatoare
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main_Form());
         }
-
 
         public static String GetIntBinaryString(int n)
         {
@@ -40,7 +39,7 @@ namespace Numere_Pseudoaleatoare
                 i++;
             }
             char[] a = new char[8];
-            for(int j=24;j<32;++j)
+            for (int j = 24; j < 32; ++j)
             {
                 a[j - 24] = b[j];
             }

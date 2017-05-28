@@ -20,7 +20,7 @@
             {
                 return "Tip Aleatorism: Bun";
             }
-            else if(tip==TipAleatorism.Nesatisfacator)
+            else if (tip == TipAleatorism.Nesatisfacator)
             {
                 return "Tip Aleatorism: Nesatisfacator";
             }
