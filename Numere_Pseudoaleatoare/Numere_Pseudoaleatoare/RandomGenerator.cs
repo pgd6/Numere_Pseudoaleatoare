@@ -21,6 +21,25 @@ namespace Numere_Pseudoaleatoare
             return nRandomArray;
         }
 
+        public static int[] MatriceCorelatiiSeriale(string sStringBinar) // 01 00 - 0  si 10 11 - 1  Sparge in modu asta si dupa face suma de 1 si de 0
+        {
+            char[] cCharArray = sStringBinar.ToCharArray();
+            int nLungimeMatrice = sStringBinar.Length;
+            int[] nMatriceCorelatiiSeriale = new int[2];
+            if (sStringBinar.Length % 2 != 0)
+                nLungimeMatrice = sStringBinar.Length - 1;
+            for (int i = 0; i < nLungimeMatrice; i = i + 2)
+            {
+                string s = Convert.ToString(cCharArray[i]) + Convert.ToString(cCharArray[i + 1]);
+                if (s == "00" || s == "01")
+                    nMatriceCorelatiiSeriale[0]++;
+                else
+                if (s == "11" || s == "10")
+                    nMatriceCorelatiiSeriale[1]++;
+            }
+            return nMatriceCorelatiiSeriale;
+        }
+
         public static int[] ConvertToByteArray(int[] nIntArray)
         {
             int[] nByteArray = new int[nIntArray.Length];

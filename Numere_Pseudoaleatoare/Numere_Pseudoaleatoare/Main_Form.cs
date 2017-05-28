@@ -32,8 +32,10 @@ namespace Numere_Pseudoaleatoare
             int[] nNumarAparitii = RandomGenerator.NumarDe0si1(sStringArray);
             int[] nSpargeIn2Biti = RandomGenerator.SpargInDoiBiti(sStringArray);
             int[] nFrecventaCaracterHex = RandomGenerator.FrecventaDihex(sHexArray);
+            int[] nMatriceCorelatiiSeriale = RandomGenerator.MatriceCorelatiiSeriale(sStringArray);
             TesteAleatorism.TestFrecventaCharacterHexa(nFrecventaCaracterHex);
             TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
+            TesteAleatorism.TestCorealtiiSeriale(nMatriceCorelatiiSeriale, nSpargeIn2Biti);
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
