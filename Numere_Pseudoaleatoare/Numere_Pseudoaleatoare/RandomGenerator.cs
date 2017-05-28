@@ -16,7 +16,7 @@ namespace Numere_Pseudoaleatoare
             int[] nRandomArray = new int[nLength];
             for(int i=0;i<nLength;i++)
             {
-                nRandomArray[i] = randomNumber.Next(0,255);
+                nRandomArray[i] = randomNumber.Next(0,256);
             }
             return nRandomArray;
         }
@@ -177,5 +177,15 @@ namespace Numere_Pseudoaleatoare
             return nSpargInDoiBiti;
         }
 
+
+        public static String StringRepeater(String str, int num)
+        {
+            StringBuilder tmpStr=new StringBuilder();
+            for(int i=0;i<num;i++)
+            {
+                tmpStr.Append(str);
+            }
+            return tmpStr.ToString();
+        }
     }
 }

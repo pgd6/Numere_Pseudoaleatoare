@@ -95,33 +95,66 @@ namespace Numere_Pseudoaleatoare
             return TipAleatorism.Nesatisfacator;
         }
 
-        public static TipAleatorism TestCorealtiiSeriale(int[] nMatriceCorelatiiSeriale,int [] nij)
+        public static TipAleatorism DistantaCaractere(String sir, char caracter)
         {
-            int n = nMatriceCorelatiiSeriale[0] + nMatriceCorelatiiSeriale[1];
-            double nPe2 = (double)n / 2;
-            double nPe4 = (double)n / 4;
-            double patruPeN = 4 / (double)n;
-            double doiPeN = 2 / (double)n;
-            double rezultat;
-            double suma1 = 0, suma2 = 0;
-            for (int i = 0; i <= 1; i++)
+            double rezultat = 0;
+            int numarTotalMarks = 0;
+            int[] numarAparitii = new int[11];
+            double[] numarNormalizatMarks = new double[11];
+            double[] probabilitate = new double[11];
+
+            int distanta = 0;
+            foreach (char c in sir)
             {
-                suma2 += (nMatriceCorelatiiSeriale[i] - nPe2) * (nMatriceCorelatiiSeriale[i] - nPe2);
+                if (c == caracter)
+                {
+                    if (distanta > 10)
+                    {
+                        distanta = 10;
+                    }
+                    ++numarAparitii[distanta];
+                    distanta = 0;
+                }
+                else
+                {
+                    ++distanta;
+                }
             }
-            for (int i = 0; i < 4; i++)
+
+            for (int i = 1; i < 11; ++i)
             {
-                suma1 += (nij[i] - nPe4) * (nij[i] - nPe4);
+                probabilitate[i] = 1f / Math.Pow(2, i);
+                numarTotalMarks += numarAparitii[i];
             }
-            rezultat = (patruPeN * suma1) - (doiPeN * suma2);
-            if (rezultat < 5.991)
+
+            // Total gap number
+            for (int i = 1; i < 11; ++i)
+            {
+                numarNormalizatMarks[i] = numarTotalMarks * probabilitate[i];
+            }
+
+            for (int i=1;i<11;++i)
+            {
+                double sumI = Math.Pow(numarAparitii[i] - numarNormalizatMarks[i], 2) / numarNormalizatMarks[i];
+                
+                // If sumI wasn't divided by 0
+                if (!double.IsNaN(sumI))
+                {
+                    rezultat += sumI;
+                }
+            }
+
+
+            if (rezultat < 16.919)
             {
                 return TipAleatorism.Foarte_Bun;
             }
-            else if (rezultat >= 5.991 && rezultat < 9.210)
+            else if (rezultat >= 16.919 && rezultat < 21.666)
             {
                 return TipAleatorism.Bun;
             }
             return TipAleatorism.Nesatisfacator;
+
         }
 
 
