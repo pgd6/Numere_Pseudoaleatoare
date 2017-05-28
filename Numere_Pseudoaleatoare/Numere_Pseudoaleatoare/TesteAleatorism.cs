@@ -157,6 +157,35 @@ namespace Numere_Pseudoaleatoare
 
         }
 
+        public static TipAleatorism TestCorealtiiSeriale(int[] nMatriceCorelatiiSeriale, int[] nij)
+        {
+            int n = nMatriceCorelatiiSeriale[0] + nMatriceCorelatiiSeriale[1];
+            double nPe2 = (double)n / 2;
+            double nPe4 = (double)n / 4;
+            double patruPeN = 4 / (double)n;
+            double doiPeN = 2 / (double)n;
+            double rezultat;
+            double suma1 = 0, suma2 = 0;
+            for (int i = 0; i <= 1; i++)
+            {
+                suma2 += (nMatriceCorelatiiSeriale[i] - nPe2) * (nMatriceCorelatiiSeriale[i] - nPe2);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                suma1 += (nij[i] - nPe4) * (nij[i] - nPe4);
+            }
+            rezultat = (patruPeN * suma1) - (doiPeN * suma2);
+            if (rezultat < 5.991)
+            {
+                return TipAleatorism.Foarte_Bun;
+            }
+            else if (rezultat >= 5.991 && rezultat < 9.210)
+            {
+                return TipAleatorism.Bun;
+            }
+            return TipAleatorism.Nesatisfacator;
+        }
+
 
     }
 }
