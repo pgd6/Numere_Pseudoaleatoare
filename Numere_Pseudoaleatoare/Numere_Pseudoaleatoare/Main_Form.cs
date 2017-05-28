@@ -173,7 +173,7 @@ namespace Numere_Pseudoaleatoare
             TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tip = TesteAleatorism.TestFrecventaCharacterHexa(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
+                tip = TesteAleatorism.TestFrecventaCuOcteti(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
             }
 
             tb_Main.Text += tip.ToString();
