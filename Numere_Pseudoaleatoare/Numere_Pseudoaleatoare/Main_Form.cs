@@ -237,7 +237,7 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestCorealtiiSeriale(RandomGenerator.MatriceCorelatiiSeriale(Program.fileString), RandomGenerator.SpargInDoiBiti(Program.fileString));
+                tb_Main.Text = TesteAleatorism.TestCorealtiiSeriale(RandomGenerator.MatriceCorelatiiSeriale(bitString), RandomGenerator.SpargInDoiBiti(bitString));
             }
             else
             {
