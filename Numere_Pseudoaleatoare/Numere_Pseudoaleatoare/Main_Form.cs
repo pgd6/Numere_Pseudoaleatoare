@@ -38,11 +38,6 @@ namespace Numere_Pseudoaleatoare
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }
 
-        private void OpenFileDialog_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void btn_File_Click(object sender, EventArgs e)
         {
             // Set the File Picker to the current directory.
@@ -62,11 +57,6 @@ namespace Numere_Pseudoaleatoare
 
                 sr.Close();
             }
-        }
-
-        private void tb_File_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_ClearFile_Click(object sender, EventArgs e)

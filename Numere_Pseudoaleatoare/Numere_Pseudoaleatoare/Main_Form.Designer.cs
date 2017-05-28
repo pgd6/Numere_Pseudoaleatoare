@@ -47,10 +47,6 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // OpenFileDialog
-            // 
-            this.OpenFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.OpenFileDialog_FileOk);
-            // 
             // btn_File
             // 
             this.btn_File.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -71,7 +67,6 @@
             this.tb_File.ReadOnly = true;
             this.tb_File.Size = new System.Drawing.Size(651, 20);
             this.tb_File.TabIndex = 1;
-            this.tb_File.TextChanged += new System.EventHandler(this.tb_File_TextChanged);
             // 
             // btn_ClearFile
             // 

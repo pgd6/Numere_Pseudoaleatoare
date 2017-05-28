@@ -16,7 +16,7 @@ namespace Numere_Pseudoaleatoare
             int[] nRandomArray = new int[nLength];
             for(int i=0;i<nLength;i++)
             {
-                nRandomArray[i] = randomNumber.Next(0,255);
+                nRandomArray[i] = randomNumber.Next(0,256);
             }
             return nRandomArray;
         }
