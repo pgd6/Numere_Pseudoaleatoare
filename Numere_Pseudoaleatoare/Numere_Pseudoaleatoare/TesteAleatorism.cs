@@ -98,8 +98,9 @@ namespace Numere_Pseudoaleatoare
         public static TipAleatorism DistantaCaractere(String sir, char caracter)
         {
             double rezultat = 0;
+            int numarTotalMarks = 0;
             int[] numarAparitii = new int[11];
-            double[] numarAparitiiNormalizate = new double[11];
+            double[] numarNormalizatMarks = new double[11];
             double[] probabilitate = new double[11];
 
             int distanta = 0;
@@ -123,16 +124,18 @@ namespace Numere_Pseudoaleatoare
             for (int i = 1; i < 11; ++i)
             {
                 probabilitate[i] = 1f / Math.Pow(2, i);
+                numarTotalMarks += numarAparitii[i];
             }
 
+            // Total gap number
             for (int i = 1; i < 11; ++i)
             {
-                numarAparitiiNormalizate[i] = numarAparitii[i] * probabilitate[i];
+                numarNormalizatMarks[i] = numarTotalMarks * probabilitate[i];
             }
 
             for (int i=1;i<11;++i)
             {
-                double sumI = Math.Pow(numarAparitii[i] - numarAparitiiNormalizate[i], 2) / numarAparitiiNormalizate[i];
+                double sumI = Math.Pow(numarAparitii[i] - numarNormalizatMarks[i], 2) / numarNormalizatMarks[i];
                 
                 // If sumI wasn't divided by 0
                 if (!double.IsNaN(sumI))

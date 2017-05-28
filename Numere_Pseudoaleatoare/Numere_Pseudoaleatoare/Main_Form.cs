@@ -34,6 +34,7 @@ namespace Numere_Pseudoaleatoare
             int[] nFrecventaCaracterHex = RandomGenerator.FrecventaDihex(sHexArray);
             TesteAleatorism.TestFrecventaCharacterHexa(nFrecventaCaracterHex);
             TesteAleatorism.TestFrecventaCuOcteti(nFrecventaHex);
+
             // TesteAleatorism.TestFrecventaBiti(nNumarAparitii);
             //  TesteAleatorism.TestSpage2Biti(nSpargeIn2Biti);
         }

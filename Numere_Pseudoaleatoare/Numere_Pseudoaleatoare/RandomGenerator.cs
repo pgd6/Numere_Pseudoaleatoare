@@ -159,7 +159,7 @@ namespace Numere_Pseudoaleatoare
         }
 
 
-        public static String RandomStringBuilder(String str, int num)
+        public static String StringRepeater(String str, int num)
         {
             StringBuilder tmpStr=new StringBuilder();
             for(int i=0;i<num;i++)
