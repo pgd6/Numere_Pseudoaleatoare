@@ -41,12 +41,13 @@ namespace Numere_Pseudoaleatoare
             return sHexArray;
         }
 
-        public static int[] FrecventaHex(string[] sHexArray)
+        public static int[] FrecventaHex(string[] sHexArray)// To DO!
         {
             int[] sFrecventaHex = new int[256];
             for(int i=0;i<sHexArray.Length;i++)
             {
                 int pozitie = int.Parse(sHexArray[i], NumberStyles.HexNumber);
+                pozitie = pozitie % 255;
                 sFrecventaHex[pozitie]++;
             }
             return sFrecventaHex;
