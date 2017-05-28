@@ -95,5 +95,65 @@ namespace Numere_Pseudoaleatoare
             return TipAleatorism.Nesatisfacator;
         }
 
+        public static TipAleatorism DistantaCaractere(String sir, char caracter)
+        {
+            double rezultat = 0;
+            int[] numarAparitii = new int[11];
+            double[] numarAparitiiNormalizate = new double[11];
+            double[] probabilitate = new double[11];
+
+            int distanta = 0;
+            foreach (char c in sir)
+            {
+                if (c == caracter)
+                {
+                    if (distanta > 10)
+                    {
+                        distanta = 10;
+                    }
+                    ++numarAparitii[distanta];
+                    distanta = 0;
+                }
+                else
+                {
+                    ++distanta;
+                }
+            }
+
+            for (int i = 1; i < 11; ++i)
+            {
+                probabilitate[i] = 1f / Math.Pow(2, i);
+            }
+
+            for (int i = 1; i < 11; ++i)
+            {
+                numarAparitiiNormalizate[i] = numarAparitii[i] * probabilitate[i];
+            }
+
+            for (int i=1;i<11;++i)
+            {
+                double sumI = Math.Pow(numarAparitii[i] - numarAparitiiNormalizate[i], 2) / numarAparitiiNormalizate[i];
+                
+                // If sumI wasn't divided by 0
+                if (!double.IsNaN(sumI))
+                {
+                    rezultat += sumI;
+                }
+            }
+
+
+            if (rezultat < 16.919)
+            {
+                return TipAleatorism.Foarte_Bun;
+            }
+            else if (rezultat >= 16.919 && rezultat < 21.666)
+            {
+                return TipAleatorism.Bun;
+            }
+            return TipAleatorism.Nesatisfacator;
+
+        }
+
+
     }
 }

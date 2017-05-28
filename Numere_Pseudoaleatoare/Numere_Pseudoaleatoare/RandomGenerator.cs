@@ -21,7 +21,7 @@ namespace Numere_Pseudoaleatoare
             return nRandomArray;
         }
 
-        public static int[] ConvertToByteArray(int[] nIntArray)
+        public static int[] ConvertToBitArray(int[] nIntArray)
         {
             int[] nByteArray = new int[nIntArray.Length];
             for(int i=0;i<nIntArray.Length;i++)
@@ -158,5 +158,15 @@ namespace Numere_Pseudoaleatoare
             return nSpargInDoiBiti;
         }
 
+
+        public static String RandomStringBuilder(String str, int num)
+        {
+            StringBuilder tmpStr=new StringBuilder();
+            for(int i=0;i<num;i++)
+            {
+                tmpStr.Append(str);
+            }
+            return tmpStr.ToString();
+        }
     }
 }

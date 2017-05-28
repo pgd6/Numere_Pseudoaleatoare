@@ -39,10 +39,12 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_TestFrecvDiHex = new System.Windows.Forms.Button();
+            this.btn_TestFrecvHex = new System.Windows.Forms.Button();
             this.btn_TestFrecvDibiti = new System.Windows.Forms.Button();
             this.btn_TestFrecvBiti = new System.Windows.Forms.Button();
-            this.btn_TestFrecvHex = new System.Windows.Forms.Button();
-            this.btn_TestFrecvDiHex = new System.Windows.Forms.Button();
+            this.btn_DistCar0 = new System.Windows.Forms.Button();
+            this.btn_DistCar1 = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +134,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_DistCar1);
+            this.panel1.Controls.Add(this.btn_DistCar0);
             this.panel1.Controls.Add(this.btn_TestFrecvDiHex);
             this.panel1.Controls.Add(this.btn_TestFrecvHex);
             this.panel1.Controls.Add(this.btn_TestFrecvDibiti);
@@ -140,6 +144,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(166, 411);
             this.panel1.TabIndex = 15;
+            // 
+            // btn_TestFrecvDiHex
+            // 
+            this.btn_TestFrecvDiHex.Location = new System.Drawing.Point(3, 189);
+            this.btn_TestFrecvDiHex.Name = "btn_TestFrecvDiHex";
+            this.btn_TestFrecvDiHex.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvDiHex.TabIndex = 4;
+            this.btn_TestFrecvDiHex.Text = "Test Frecventa Dihexazecimale";
+            this.btn_TestFrecvDiHex.UseVisualStyleBackColor = true;
+            this.btn_TestFrecvDiHex.Click += new System.EventHandler(this.btn_TestFrecvDiHex_Click);
+            // 
+            // btn_TestFrecvHex
+            // 
+            this.btn_TestFrecvHex.Location = new System.Drawing.Point(3, 127);
+            this.btn_TestFrecvHex.Name = "btn_TestFrecvHex";
+            this.btn_TestFrecvHex.Size = new System.Drawing.Size(158, 56);
+            this.btn_TestFrecvHex.TabIndex = 3;
+            this.btn_TestFrecvHex.Text = "Test Frecventa Hexazecimale";
+            this.btn_TestFrecvHex.UseVisualStyleBackColor = true;
+            this.btn_TestFrecvHex.Click += new System.EventHandler(this.btn_TestFrecvHex_Click);
             // 
             // btn_TestFrecvDibiti
             // 
@@ -161,25 +185,25 @@
             this.btn_TestFrecvBiti.UseVisualStyleBackColor = true;
             this.btn_TestFrecvBiti.Click += new System.EventHandler(this.btn_TestFrecvBiti_Click);
             // 
-            // btn_TestFrecvHex
+            // btn_DistCar0
             // 
-            this.btn_TestFrecvHex.Location = new System.Drawing.Point(3, 127);
-            this.btn_TestFrecvHex.Name = "btn_TestFrecvHex";
-            this.btn_TestFrecvHex.Size = new System.Drawing.Size(158, 56);
-            this.btn_TestFrecvHex.TabIndex = 3;
-            this.btn_TestFrecvHex.Text = "Test Frecventa Hexazecimale";
-            this.btn_TestFrecvHex.UseVisualStyleBackColor = true;
-            this.btn_TestFrecvHex.Click += new System.EventHandler(this.btn_TestFrecvHex_Click);
+            this.btn_DistCar0.Location = new System.Drawing.Point(3, 251);
+            this.btn_DistCar0.Name = "btn_DistCar0";
+            this.btn_DistCar0.Size = new System.Drawing.Size(158, 56);
+            this.btn_DistCar0.TabIndex = 5;
+            this.btn_DistCar0.Text = "Test Distanta Caracter \'0\'";
+            this.btn_DistCar0.UseVisualStyleBackColor = true;
+            this.btn_DistCar0.Click += new System.EventHandler(this.btn_DistCar0_Click);
             // 
-            // btn_TestFrecvDiHex
+            // btn_DistCar1
             // 
-            this.btn_TestFrecvDiHex.Location = new System.Drawing.Point(3, 189);
-            this.btn_TestFrecvDiHex.Name = "btn_TestFrecvDiHex";
-            this.btn_TestFrecvDiHex.Size = new System.Drawing.Size(158, 56);
-            this.btn_TestFrecvDiHex.TabIndex = 4;
-            this.btn_TestFrecvDiHex.Text = "Test Frecventa Dihexazecimale";
-            this.btn_TestFrecvDiHex.UseVisualStyleBackColor = true;
-            this.btn_TestFrecvDiHex.Click += new System.EventHandler(this.btn_TestFrecvDiHex_Click);
+            this.btn_DistCar1.Location = new System.Drawing.Point(3, 313);
+            this.btn_DistCar1.Name = "btn_DistCar1";
+            this.btn_DistCar1.Size = new System.Drawing.Size(158, 56);
+            this.btn_DistCar1.TabIndex = 6;
+            this.btn_DistCar1.Text = "Test Distanta Caracter \'1\'";
+            this.btn_DistCar1.UseVisualStyleBackColor = true;
+            this.btn_DistCar1.Click += new System.EventHandler(this.btn_DistCar1_Click);
             // 
             // Main_Form
             // 
@@ -221,6 +245,8 @@
         private System.Windows.Forms.Button btn_TestFrecvDibiti;
         private System.Windows.Forms.Button btn_TestFrecvHex;
         private System.Windows.Forms.Button btn_TestFrecvDiHex;
+        private System.Windows.Forms.Button btn_DistCar1;
+        private System.Windows.Forms.Button btn_DistCar0;
     }
 }
 
