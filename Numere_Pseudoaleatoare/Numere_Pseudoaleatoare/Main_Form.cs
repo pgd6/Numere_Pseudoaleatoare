@@ -23,7 +23,6 @@ namespace Numere_Pseudoaleatoare
         private void Main_Form_Load(object sender, EventArgs e)
         {
             btn_ClearFile_Toggle(false);
-
             //int[] nIntArray = RandomGenerator.RandomArray(100);
             //int[] nByteArray = RandomGenerator.ConvertToBitArray(nIntArray);
             //string[] sHexArray = RandomGenerator.ConvertToHex(nIntArray);
@@ -140,11 +139,17 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestFrecventaBiti(RandomGenerator.NumarDe0si1(bitString));
+                tb_Main.Text += TesteAleatorism.TestBiti(RandomGenerator.NumarDe0si1(bitString),out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
+                for (int i = 0; i < hist.nume.Count; ++i)
+                {
+                    chart_Main.Series["Series_Main"].Points.AddXY(hist.nume[i].ToString(), hist.valoare[i]);
+                }
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -156,11 +161,17 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestSparge2Biti(RandomGenerator.SpargInDoiBiti(bitString));
+                tb_Main.Text += TesteAleatorism.TestDibiti(RandomGenerator.SpargInDoiBiti(bitString),out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
+                for (int i = 0; i < hist.nume.Count; ++i)
+                {
+                    chart_Main.Series["Series_Main"].Points.AddXY(hist.nume[i].ToString(), hist.valoare[i]);
+                }
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -172,11 +183,13 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestFrecventaHex(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)));
+                tb_Main.Text += TesteAleatorism.TestFrecventaHex(RandomGenerator.FrecventaHex(RandomGenerator.ConvertToHex(Program.fileInt)),out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -188,11 +201,13 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestFrecventaDihex(RandomGenerator.FrecventaDihex(RandomGenerator.ConvertToHex(Program.fileInt)));
+                tb_Main.Text += TesteAleatorism.TestFrecventaDihex(RandomGenerator.FrecventaDihex(RandomGenerator.ConvertToHex(Program.fileInt)),out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -204,11 +219,17 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.DistantaCaractere(bitString, '0');
+                tb_Main.Text += TesteAleatorism.DistantaCaractere(bitString, '0', out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
+                for (int i = 1; i < hist.nume.Count; ++i)
+                {
+                    chart_Main.Series["Series_Main"].Points.AddXY(hist.nume[i].ToString(), hist.valoare[i]);
+                }
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -221,11 +242,17 @@ namespace Numere_Pseudoaleatoare
             TipAleatorism tip = TipAleatorism.Eroare;
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.DistantaCaractere(bitString, '1');
+                tb_Main.Text += TesteAleatorism.DistantaCaractere(bitString, '1',out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
+                for (int i = 1; i < hist.nume.Count; ++i)
+                {
+                    chart_Main.Series["Series_Main"].Points.AddXY(hist.nume[i].ToString(), hist.valoare[i]);
+                }
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -237,11 +264,35 @@ namespace Numere_Pseudoaleatoare
             String bitString = GetBitString(out bool successful);
             if (successful)
             {
-                tb_Main.Text = TesteAleatorism.TestCorealtiiSeriale(RandomGenerator.MatriceCorelatiiSeriale(bitString), RandomGenerator.SpargInDoiBiti(bitString));
+                tb_Main.Text += TesteAleatorism.TestCorealtiiSeriale(RandomGenerator.MatriceCorelatiiSeriale(bitString), RandomGenerator.SpargInDoiBiti(bitString));
+
+                chart_Main.Series["Series_Main"].Points.Clear();
             }
             else
             {
-                tb_Main.Text = "Eroare! Verificati daca a fost deschis un fisier!";
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
+            }
+
+            tb_Main.Text += "\r\n\r\n";
+        }
+
+        private void btn_TestClasa_Click(object sender, EventArgs e)
+        {
+            tb_Main.Text += ((Button)sender).Text + "\r\n";
+            String bitString = GetBitString(out bool successful);
+            if (successful)
+            {
+                tb_Main.Text += TesteAleatorism.TestClasa(bitString,out Histograma hist);
+
+                chart_Main.Series["Series_Main"].Points.Clear();
+                for(int i=0;i<hist.nume.Count;++i)
+                {
+                    chart_Main.Series["Series_Main"].Points.AddXY(hist.nume[i].ToString(), hist.valoare[i]);
+                }
+            }
+            else
+            {
+                tb_Main.Text += "Eroare! Verificati daca a fost deschis un fisier!";
             }
 
             tb_Main.Text += "\r\n\r\n";
@@ -250,6 +301,7 @@ namespace Numere_Pseudoaleatoare
         private void btn_ClearText_Click(object sender, EventArgs e)
         {
             tb_Main.Text = String.Empty;
+            chart_Main.Series["Series_Main"].Points.Clear();
         }
     }
 }

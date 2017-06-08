@@ -9,7 +9,7 @@ namespace Numere_Pseudoaleatoare
 {
     class TesteAleatorism
     {
-        public static String TestFrecventaBiti(int[] Frecventa)
+        public static String TestBiti(int[] Frecventa, out Histograma hist)
         {
             ComparatorInterval CI = new ComparatorInterval(3.841, 6.635);
             String concluzie = String.Empty;
@@ -19,10 +19,18 @@ namespace Numere_Pseudoaleatoare
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString()+ "\r\n";
 
+            List<String> histNume = new List<string>();
+            for (int i = 0; i <= 1; ++i)
+            {
+                histNume.Add(i.ToString());
+            }
+            List<int> histVal = new List<int>(Frecventa);
+            hist = new Histograma(histNume, histVal);
+
             return concluzie;
         }
 
-        public static String TestSparge2Biti(int[] Sparge2Biti)
+        public static String TestDibiti(int[] Sparge2Biti,out Histograma hist)
         {
             ComparatorInterval CI = new ComparatorInterval(301.128, 316.939);
             String concluzie = String.Empty;
@@ -38,10 +46,19 @@ namespace Numere_Pseudoaleatoare
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString() + "\r\n";
 
+            List<String> histNume = new List<String>();
+            histNume.Add("00");
+            histNume.Add("11");
+            histNume.Add("01");
+            histNume.Add("10");
+
+            List<int> histVal = new List<int>(Sparge2Biti);
+            hist = new Histograma(histNume, histVal);
+
             return concluzie;
         }
 
-        public static String TestFrecventaHex(int[] FrecventaOcteti)
+        public static String TestFrecventaHex(int[] FrecventaOcteti,out Histograma hist)
         {
             ComparatorInterval CI = new ComparatorInterval(301.128, 316.939);
             String concluzie = String.Empty;
@@ -60,10 +77,18 @@ namespace Numere_Pseudoaleatoare
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString() + "\r\n";
 
+            List<String> histNume = new List<string>();
+            for (int i = 0; i <= 15; ++i)
+            {
+                histNume.Add(i.ToString());
+            }
+            List<int> histVal = new List<int>(FrecventaOcteti);
+            hist = new Histograma(histNume, histVal);
+
             return concluzie;
         }
 
-        public static String TestFrecventaDihex(int[] FrecventaCaracterHexa)
+        public static String TestFrecventaDihex(int[] FrecventaCaracterHexa,out Histograma hist)
         {
             ComparatorInterval CI = new ComparatorInterval(24.996, 30.578);
             String concluzie = String.Empty;
@@ -82,10 +107,18 @@ namespace Numere_Pseudoaleatoare
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString() + "\r\n";
 
+            List<String> histNume = new List<string>();
+            for (int i = 0; i <= 1; ++i)
+            {
+                histNume.Add(i.ToString());
+            }
+            List<int> histVal = new List<int>(FrecventaCaracterHexa);
+            hist = new Histograma(histNume, histVal);
+
             return concluzie;
         }
 
-        public static String DistantaCaractere(String sir, char caracter)
+        public static String DistantaCaractere(String sir, char caracter, out Histograma hist)
         {
             ComparatorInterval CI = new ComparatorInterval(16.919, 21.666);
             String concluzie = String.Empty;
@@ -139,6 +172,15 @@ namespace Numere_Pseudoaleatoare
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString() + "\r\n";
 
+            List<String> histNume = new List<string>();
+            for (int i = 0; i <= 9; ++i)
+            {
+                histNume.Add(i.ToString());
+            }
+            histNume.Add(">9");
+            List<int> histVal = new List<int>(numarAparitii);
+            hist = new Histograma(histNume, histVal);
+
             return concluzie;
         }
 
@@ -165,6 +207,46 @@ namespace Numere_Pseudoaleatoare
 
             concluzie += CI.ToString() + "\r\n\r\n";
             concluzie += "Rezultat: " + rezultat + " => " + CI.ToTipAleatorism(rezultat).ToString() + "\r\n";
+
+            return concluzie;
+        }
+
+        public static String TestClasa(String bitString, out Histograma hist)
+        {
+            ComparatorInterval CI = new ComparatorInterval(15.507, 20.09);
+            String concluzie = String.Empty;
+            int[] clasa = new int[9];
+            for(int i=0;i<bitString.Length/8;++i)
+            {
+                int nr = 0;
+                for(int j=i*8;j<(i+1)*8;++j)
+                {
+                    if(bitString[j]=='1')
+                    {
+                        ++nr;
+                    }
+                }
+                ++clasa[nr];
+            }
+
+            double rezultat = 0;
+            for(int i=0;i<=8;++i)
+            {
+                double ms_real = bitString.Length / 8;
+                double temp = ms_real * Program.Combinari(8, i) / 256;
+                rezultat += Math.Pow((clasa[i] - temp), 2) / temp;
+            }
+
+            concluzie += CI.ToString() + "\r\n\r\n";
+            concluzie += "Rezultat: " + rezultat + "=>" + CI.ToTipAleatorism(rezultat).ToString();
+
+            List<String> histNume = new List<string>();
+            for (int i = 0; i <= 8; ++i)
+            {
+                histNume.Add(i.ToString());
+            }
+            List<int> histVal = new List<int>(clasa);
+            hist = new Histograma(histNume, histVal);
 
             return concluzie;
         }

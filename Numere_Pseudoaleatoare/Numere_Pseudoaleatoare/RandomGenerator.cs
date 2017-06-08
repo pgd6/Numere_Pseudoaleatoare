@@ -41,7 +41,7 @@ namespace Numere_Pseudoaleatoare
             return sHexArray;
         }
 
-        public static int[] FrecventaHex(string[] sHexArray)// To DO!
+        public static int[] FrecventaHex(string[] sHexArray)
         {
             int[] sFrecventaHex = new int[256];
             for (int i = 0; i < sHexArray.Length; i++)
@@ -68,8 +68,7 @@ namespace Numere_Pseudoaleatoare
             StringBuilder builder = new StringBuilder();
             foreach (string value in array)
             {
-                builder.Append(value);
-                builder.Append('.');
+                builder.Append(value + ".");
             }
             return builder.ToString();
         }

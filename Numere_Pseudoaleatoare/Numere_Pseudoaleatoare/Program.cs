@@ -45,5 +45,18 @@ namespace Numere_Pseudoaleatoare
             }
             return new string(a);
         }
+
+        public static int Combinari(int n, int k)
+        {
+
+            double result = 1.0;
+
+            for (int i = 0; i < k; i++)
+            {
+                result *= (double)(n - i) / (i + 1.0);
+            }
+
+            return (int) result;
+        }
     }
 }
